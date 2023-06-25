@@ -22,5 +22,6 @@ npx prisma init
 
 Bu şekilde prisma başlatılıyor `npx prisma init`
 
-* prisma ile modelleri oluştur
-* `npx prisma migrate dev`ile model postgres üzerindeki db'de oluşturuluyor.
+- prisma ile modelleri oluştur
+- `npx prisma migrate dev`ile model postgres üzerindeki db'de oluşturuluyor.
+
