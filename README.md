@@ -1,4 +1,4 @@
-First, run the development server:
+# Prisma öğren
 
 ```bash
 npm run dev
@@ -14,3 +14,7 @@ npm i daisyui axios
 - tailwind.config.js
   plugins: [require('daisyui')],
 
+```bash
+npm i -D prisma
+npm i @prisma/client
+```
