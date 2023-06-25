@@ -39,6 +39,7 @@ const getProducts = async () => {
       id: true,
       title: true,
       price: true,
+      brandId:true,
       brand: true,
     },
   })
@@ -53,7 +54,7 @@ const Product = async () => {
         <tbody>
           {products.map((product, index) => (
             <tr key={product.id}>
-              <td>{product.id}</td>
+              <td>{index + 1}</td>
               <td>{product.title}</td>
               <td>{product.price}</td>
               <td>{product.brand.name}</td>
