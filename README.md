@@ -11,5 +11,6 @@ npx create-next-app@latest
 npm i daisyui axios
 ```
 
-tailwind.config.js
+- tailwind.config.js
   plugins: [require('daisyui')],
+
