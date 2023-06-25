@@ -25,4 +25,3 @@ Bu şekilde prisma başlatılıyor `npx prisma init`
 - prisma ile modelleri oluştur
 - `npx prisma migrate dev`ile model postgres üzerindeki db'de oluşturuluyor.
 - Test veri girişini `npx prisma studio` üzerinden yapabiliriz.
-
