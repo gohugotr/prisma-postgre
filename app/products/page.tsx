@@ -1,6 +1,6 @@
 const Product = () => {
   return <div>
-    <table>
+    <table className="table w-full">
         <thead>
             <tr>
                 <th>#</th>
