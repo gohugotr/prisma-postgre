@@ -17,4 +17,7 @@ npm i daisyui axios
 ```bash
 npm i -D prisma
 npm i @prisma/client
+npx prisma init
 ```
+
+Bu şekilde prisma başlatılıyor `npx prisma init`
