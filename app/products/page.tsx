@@ -3,11 +3,11 @@ const Product = () => {
     <table>
         <thead>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th className="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
