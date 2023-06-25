@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import AddProduct from './addProduct'
 
 const prisma = new PrismaClient()
 
@@ -38,6 +39,7 @@ const Product = async () => {
               <td>{product.title}</td>
               <td>{product.price}</td>
               <td>{product.brand.name}</td>
+              <td><AddProduct /></td>
             </tr>
           ))}
         </tbody>
