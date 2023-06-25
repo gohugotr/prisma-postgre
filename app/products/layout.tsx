@@ -1,9 +1,5 @@
-import React from 'react'
-
-const ProductLayout = () => {
-  return (
-    <div>ProductLayout</div>
-  )
+const ProductLayout = ({children} : {children:React.ReactNode}) => {
+  return <div>{children}</div>
 }
 
 export default ProductLayout
