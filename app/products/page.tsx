@@ -9,9 +9,19 @@ const getProducts = async () => {
       id: true,
       title: true,
       price: true,
-      brandId:true,
+      brandId: true,
       brand: true,
     },
+  })
+  return res
+}
+
+const getBrands = async () => {
+  const res = await prisma.brand.findMany({
+    select:{
+      id:true,
+      name:true,
+    }
   })
   return res
 }
@@ -19,9 +29,13 @@ const getProducts = async () => {
 const Product = async () => {
   const products = await getProducts()
   //console.log(products)
-
+  const brands = await getBrands()
+  
   return (
     <div>
+      <div className='mb-2'>
+        <AddProduct  brands={brands}/>
+      </div>
       <table className='table w-full'>
         <thead>
           <tr>
@@ -39,7 +53,6 @@ const Product = async () => {
               <td>{product.title}</td>
               <td>{product.price}</td>
               <td>{product.brand.name}</td>
-              <td><AddProduct /></td>
             </tr>
           ))}
         </tbody>
