@@ -66,7 +66,7 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
               <button type='button' className='btn' onClick={() => handleModal()}>
                 Close
               </button>
-              <button type='submit' className='btn btn-primary' >
+              <button type='submit' className='btn btn-primary'>
                 Submit
               </button>
             </div>
