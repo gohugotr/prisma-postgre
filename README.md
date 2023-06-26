@@ -62,3 +62,5 @@ const Product = async () => {
           ))}
         </tbody>
 ```
+
+{/* <UpdateProduct brands={brands} product={product} /> */}
