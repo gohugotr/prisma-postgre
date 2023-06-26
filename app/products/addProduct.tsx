@@ -7,11 +7,6 @@ import { useRouter } from 'next/navigation'
 
 const AddProduct = ({ brands }: { brands: Brand[] }) => {
   const [isOpen, setisOpen] = useState(false)
-
-  const handleModal = () => {
-    setisOpen(!isOpen)
-  }
-
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState('')
   const [brand, setBrand] = useState('')
@@ -23,7 +18,7 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
     e.preventDefault()
 
     // Dahili api ile axios kullanarak, product oluşturma
-    await axios.post('/api/products/', {
+    await axios.post('/api/products', {
       title: title,
       price: Number(price),
       brandId: Number(brand),
@@ -36,6 +31,12 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
 
     // Sayfayı yenile
     router.refresh()
+    // Modal formu kapat (Add Product Modal Form)
+    setisOpen(false)
+  }
+
+  const handleModal = () => {
+    setisOpen(!isOpen)
   }
 
   return (
@@ -72,7 +73,7 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               >
-                <option disabled>Marka Seçiniz</option>
+                <option value=''>--Marka Seçiniz--</option>
                 {brands.map((brand) => {
                   return (
                     <option key={brand.id} value={brand.id}>
