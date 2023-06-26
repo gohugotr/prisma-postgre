@@ -73,7 +73,9 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               >
-                <option value=''>--Marka Seçiniz--</option>
+                <option value='' disabled>
+                  --Marka Seçiniz--
+                </option>
                 {brands.map((brand) => {
                   return (
                     <option key={brand.id} value={brand.id}>
