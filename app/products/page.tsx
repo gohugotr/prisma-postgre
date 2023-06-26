@@ -27,9 +27,15 @@ const getBrands = async () => {
 }
 
 const Product = async () => {
-  const products = await getProducts()
-  //console.log(products)
-  const brands = await getBrands()
+  // Bunları sadeleştirmek için Promise yapısını kullanabiliriz
+  // const products = await getProducts()
+  // const brands = await getBrands()
+
+  // Sadeleşen Promise yapısı
+  const [products, brands] = await Promise.all([
+    getProducts(),
+    getBrands()
+  ])
   
   return (
     <div>
