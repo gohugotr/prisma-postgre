@@ -2,6 +2,8 @@
 
 import { SyntheticEvent, useState } from 'react'
 import type { Brand } from '@prisma/client'
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
 const AddProduct = ({ brands }: { brands: Brand[] }) => {
   const [isOpen, setisOpen] = useState(false)
@@ -14,8 +16,26 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
   const [price, setPrice] = useState('')
   const [brand, setBrand] = useState('')
 
+  // Sayfayı yenilemek için ('next/navigation' sınıfından olmalı)
+  const router = useRouter()
+
   const handleSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault
+    e.preventDefault()
+
+    // Dahili api ile axios kullanarak, product oluşturma
+    await axios.post('/api/products/', {
+      title: title,
+      price: Number(price),
+      brandId: Number(brand),
+    })
+
+    // Form alanlarını temizliyoruz.
+    setTitle('')
+    setPrice('')
+    setBrand('')
+
+    // Sayfayı yenile
+    router.refresh()
   }
 
   return (
