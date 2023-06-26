@@ -1,4 +1,4 @@
-# Prisma öğren
+# [Prisma öğren](https://www.youtube.com/watch?v=0jtx2hUCxfM)
 
 ```bash
 npm run dev
@@ -63,4 +63,4 @@ const Product = async () => {
         </tbody>
 ```
 
-{/* <UpdateProduct brands={brands} product={product} /> */}
+{/_ <UpdateProduct brands={brands} product={product} /> _/}
