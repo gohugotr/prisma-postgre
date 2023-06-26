@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import AddProduct from './addProduct'
+import DeleteProduct from './deleteProduct'
 
 const prisma = new PrismaClient()
 
@@ -18,10 +19,10 @@ const getProducts = async () => {
 
 const getBrands = async () => {
   const res = await prisma.brand.findMany({
-    select:{
-      id:true,
-      name:true,
-    }
+    select: {
+      id: true,
+      name: true,
+    },
   })
   return res
 }
@@ -32,15 +33,12 @@ const Product = async () => {
   // const brands = await getBrands()
 
   // Sadeleşen Promise yapısı
-  const [products, brands] = await Promise.all([
-    getProducts(),
-    getBrands()
-  ])
-  
+  const [products, brands] = await Promise.all([getProducts(), getBrands()])
+
   return (
     <div>
       <div className='mb-2'>
-        <AddProduct  brands={brands}/>
+        <AddProduct brands={brands} />
       </div>
       <table className='table w-full'>
         <thead>
@@ -59,6 +57,9 @@ const Product = async () => {
               <td>{product.title}</td>
               <td>{product.price}</td>
               <td>{product.brand.name}</td>
+              <td>
+                <DeleteProduct product={product} />
+              </td>
             </tr>
           ))}
         </tbody>
